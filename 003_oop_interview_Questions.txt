@@ -1,0 +1,145 @@
+Sure. Here is your complete list with **proper numbering**:
+
+### OOP — Classes, Objects, `self`, Constructors
+
+1. What is a class?
+2. What is an object?
+3. What is the difference between a class and an object?
+4. Why do we create objects?
+5. Can we create multiple objects from a single class?
+6. Where are objects stored?
+7. What is the purpose of the `self` keyword?
+8. Is `self` a keyword in Python?
+9. Why is `self` passed as the first parameter to instance methods?
+10. Can we rename `self`? If yes, should we?
+11. What are the four pillars of Object-Oriented Programming (OOP)?
+12. What is polymorphism? Explain with an example.
+13. What is Duck Typing in Python?
+14. What is Dynamic Binding?
+15. What is Operator Overloading? Give an example.
+16. What is a constructor?
+17. What are the types of constructors in Python?
+18. Can a class have multiple constructors?
+19. What happens if a constructor is not defined?
+20. What is the difference between a constructor and a normal method?
+21. Can a constructor return a value?
+22. Can we call a constructor explicitly?
+23. Can a constructor call another method?
+24. What is constructor chaining?
+25. What happens if the parent class has a parameterized constructor?
+
+### Encapsulation
+
+26. What is encapsulation?
+27. Why do we need encapsulation?
+28. Explain public, protected, and private members.
+29. Does Python truly support private variables?
+30. What is Name Mangling?
+31. How can we access private variables?
+32. What is the difference between encapsulation and abstraction?
+33. What are the advantages of encapsulation?
+
+### Inheritance
+
+34. What is inheritance?
+35. Why do we use inheritance?
+36. What are the different types of inheritance?
+37. Does Python support multiple inheritance?
+38. What is multilevel inheritance?
+39. What is hierarchical inheritance?
+40. What is hybrid inheritance?
+41. What is the difference between inheritance and composition?
+42. What is a real-life example of inheritance?
+43. When should inheritance NOT be used?
+44. Why can multiple inheritance become complicated?
+45. What is Method Resolution Order (MRO)?
+46. What is the Diamond Problem?
+47. How does Python solve the Diamond Problem?
+48. Explain C3 Linearization.
+
+### Method Overriding & Polymorphism
+
+49. What is method overriding?
+50. Why is method overriding used?
+51. What is the difference between method overriding and method overloading?
+52. Does Python support method overloading?
+53. What happens if a child class doesn't override a method?
+54. Can constructors be overridden?
+55. Can private methods be overridden?
+56. What is runtime polymorphism?
+57. What is `super()`?
+58. Why do we use `super()`?
+59. Can `super()` be used to access parent variables?
+60. Can we use the parent class name instead of `super()`?
+61. How does `super()` work in multiple inheritance?
+62. What are the advantages of using `super()`?
+
+### Abstraction
+
+63. What is abstraction?
+64. What is the difference between abstraction and encapsulation?
+65. What is an abstract class?
+66. Can we create an object of an abstract class?
+67. What is an abstract method?
+68. Why do we use abstract classes?
+69. Which module provides abstract class support?
+70. What is the difference between an interface and an abstract class?
+71. Can an abstract class have constructors, variables, and concrete methods?
+72. When should we choose an abstract class?
+
+### Exception Handling
+
+73. What is an exception?
+74. What is the difference between a syntax error and an exception?
+75. What is the purpose of the `try` block?
+76. What is the purpose of the `except` block?
+77. What is the purpose of the `else` block?
+78. What is the purpose of the `finally` block?
+79. When does the `finally` block execute?
+80. What is the difference between `raise` and `assert`?
+81. Can we write multiple `except` blocks?
+82. What is the difference between `Exception` and `BaseException`?
+83. What is the difference between an Error and an Exception?
+84. What is a custom exception?
+85. Why do we create custom exceptions?
+86. What is the difference between `ValueError` and `TypeError`?
+87. Why should we catch specific exceptions instead of using a generic `except`?
+
+### File Handling
+
+88. Why do we use files?
+89. What are the different file opening modes?
+90. What is the difference between `r` and `r+`?
+91. What is the difference between `w` and `a`?
+92. What is the difference between text mode and binary mode?
+93. What does the `seek()` method do?
+94. What does the `tell()` method do?
+95. What is the difference between `read()`, `readline()`, and `readlines()`?
+96. Why should we use the `with` statement?
+97. What happens if a file is not closed?
+98. What is buffering in file handling?
+99. What is a text file?
+100. What is a binary file?
+101. What is the difference between a CSV file and a TXT file?
+102. What are the advantages of file handling?
+
+### Serialization & Deserialization
+
+103. What is serialization?
+104. What is deserialization?
+105. Why is serialization required?
+106. What are the advantages of serialization?
+107. What is the difference between Pickle and JSON?
+108. Why is JSON preferred over Pickle in many applications?
+109. What are the limitations of Pickle?
+110. Can Pickle serialize every Python object?
+111. Where is serialization commonly used?
+112. Explain a real-world use case of serialization.
+
+### Built-in Inspection Functions
+
+113. What is the difference between `isinstance()` and `type()`?
+114. When should you use `isinstance()` instead of `type()`?
+115. What is the purpose of `issubclass()`?
+116. What is the difference between `dir()` and `help()`?
+117. How do you inspect an object's attributes and methods?

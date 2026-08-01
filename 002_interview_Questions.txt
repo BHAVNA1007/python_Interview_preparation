@@ -1,0 +1,1697 @@
+1. What is Python?
+2. What are the key features of Python?
+3. Why is Python called an interpreted language?
+4. What is the difference between compiled and interpreted languages?
+5. Why is Python platform independent?
+6. What makes Python dynamically typed?
+7. What is bytecode in Python?
+8. What is PVM (Python Virtual Machine)?
+9. What is a .pyc file?
+10. What is the purpose of the __pycache__ folder?
+11. How does Python execute a program internally?
+12. What is source code?
+13. What is machine code?
+14. What is compilation in Python?
+15. What is parsing in Python?
+16. What is a parse tree?
+17. What is an Abstract Syntax Tree (AST)?
+18. Difference between parse tree and AST?
+19. What role does AST play in execution?
+20. Is Python fully interpreted? Explain.
+21. What is a variable?
+22. Why is there no need to declare variable types?
+23. What is dynamic typing?
+24. Can a variable change its type?
+25. What are built-in data types in Python?
+26. What is the None type?
+27. What is mutable and immutable?
+28. Why are strings immutable?
+29. What is type() function?
+30. What is isinstance()?
+31. What is an identifier?
+32. What are the rules for naming identifiers?
+33. Can an identifier start with a number?
+34. What is the difference between identifier and keyword?
+35. Is Python case-sensitive?
+36. What is multiple assignment?
+37. What is chain assignment?
+38. How do you swap two variables?
+39. What is object identity?
+40. What does id() function do?
+41. What is input()?
+42. Why does input() always return a string?
+43. What is print()?
+44. How do you take integer input?
+45. How do you take multiple inputs in one line?
+46. What are sep and end parameters?
+47. What is type casting?
+48. What is implicit conversion?
+49. What is explicit conversion?
+50. Can every string be converted to int?
+51. What happens when float is converted to int?
+52. What error occurs when conversion fails?
+53. What is int()?
+54. What is float()?
+55. What is str()?
+56. What is bool()?
+57. What is string formatting?
+58. What are f-strings?
+59. Difference between format() and f-strings?
+60. How do you print variables inside strings?
+61. What is the difference between / and //?
+62. What is the use of % operator?
+63. What is the use of ** operator?
+64. Why is ^ not a power operator?
+65. What are assignment operators?
+66. Difference between = and ==?
+67. What does += do internally?
+68. What are relational operators?
+69. Can relational operators be chained?
+70. What is the output of 5 > 3 > 1?
+71. What are logical operators?
+72. Difference between and and &?
+73. Difference between or and |?
+74. What does not operator do?
+75. What are membership operators?
+76. Difference between in and not in?
+77. What are identity operators?
+78. Difference between is and ==?
+79. What are bitwise operators?
+80. What is XOR operator?
+81. What is an if statement?
+82. What is if-else?
+83. What is elif ladder?
+84. What is nested if?
+85. What is a ternary operator?
+86. What values are considered False in Python?
+87. What is truthiness?
+88. What is match-case?
+89. How is match-case different from switch?
+90. What is wildcard (_) in match-case?
+91. Can match-case handle multiple values?
+92. When should match-case be used?
+93. Can match-case match patterns?
+94. What happens when no case matches?
+95. Can match-case replace if-elif ladders?
+96. What is a for loop?
+97. What is a while loop?
+98. Difference between for and while?
+99. What is range()?
+100. Explain range(start, stop, step).
+101. Can range have negative step?
+102. What is an infinite loop?
+103. How do you stop an infinite loop?
+104. What is a nested loop?
+105. What is loop control?
+106. What is break?
+107. What is continue?
+108. What is pass?
+109. Difference between break and continue?
+110. What is for-else?
+111. What is while-else?
+112. When does loop else execute?
+113. Does else execute after break?
+114. What is loop nesting complexity?
+115. How do you iterate through a string?
+116. What is a list?
+117. Why are lists mutable?
+118. How do you create a list?
+119. What is indexing in lists?
+120. What is negative indexing?
+121. What is slicing?
+122. Difference between append() and extend()?
+123. Difference between append() and insert()?
+124. Difference between remove() and pop()?
+125. What does clear() do?
+126. What does copy() do?
+127. Difference between sort() and sorted()?
+128. Difference between reverse() and reversed()?
+129. How do you find list length?
+130. How do you find max and min values?
+131. How do you count occurrences?
+132. How do you merge two lists?
+133. How do you remove duplicates?
+134. What is a nested list?
+135. How do you traverse a nested list?
+136. What is shallow copy?
+137. What is deep copy?
+138. Difference between shallow and deep copy?
+139. What happens in a=b?
+140. What happens in a=b.copy()?
+141. What is a tuple?
+142. Why are tuples immutable?
+143. How do you create a tuple?
+144. What is a single-element tuple?
+145. Difference between (5) and (5,)?
+146. What is tuple packing?
+147. What is tuple unpacking?
+148. What is extended unpacking?
+149. What is a nested tuple?
+150. Can a tuple contain mutable objects?
+151. Advantages of tuple over list?
+152. Which is faster: list or tuple?
+153. Which consumes less memory?
+154. When should tuple be preferred?
+155. Can a tuple be a dictionary key?
+156. What is the output of print(True + True)?
+157. What is the output of print(False + True)?
+158. What is the output of print(bool(''))?
+159. What is the output of print(bool('0'))?
+160. What is the output of print(10 and 0 or 5)?
+161. What is the output of print(5 > 3 > 2)?
+162. What is the output of print(10/3)?
+163. What is the output of print(10//3)?
+164. What is the output of print(10%3)?
+165. What is the output of print(2**3**2)?
+
+---------------------------------------------------
+---------------------------------------------------
+
+166. Why is Python slower than Java?
+
+ython is generally slower than Java because Python prioritizes flexibility and ease of use, while Java prioritizes execution speed.
+
+Example
+
+Consider:
+
+x = 10
+y = 20
+print(x + y)
+
+When Python executes x + y, it must:
+
+Check the type of x.
+Check the type of y.
+Determine which + operation to perform.
+Execute the addition.
+
+This happens at runtime because Python is dynamically typed.
+
+In Java:
+
+int x = 10;
+int y = 20;
+System.out.println(x + y);
+
+The compiler already knows that x and y are integers. Much of the type-related work is done before execution, so Java can perform the addition more efficiently.
+
+The Core Reason
+
+Python is slower because it has:
+
+Dynamic typing (types checked at runtime)
+Interpretation overhead
+More runtime flexibility
+Automatic object handling for almost everything
+
+Java is faster because it:
+
+Uses static typing
+Compiles to optimized bytecode
+Uses Just-In-Time (JIT) compilation to generate highly optimized machine code
+
+Python is slower than Java because Python is dynamically typed and interpreted, requiring more work at runtime, whereas Java is statically typed and uses JIT compilation, allowing many optimizations to be performed before or during execution.
+
+---------------------------------------------------
+---------------------------------------------------
+
+167. Why is Python popular in AI?
+
+
+Python is popular in AI because it allows developers to focus on solving AI problems instead of spending time on complex programming details.
+
+Example
+
+Imagine you want to recognize faces in images.
+
+In a low-level language, you may need to write a lot of code to handle memory management, data structures, and mathematical operations.
+
+In Python, many of these tasks are already provided by AI libraries, so you can focus on the AI logic itself.
+
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+With just a few lines, you can start training a machine learning model.
+
+Why?
+
+AI involves a lot of mathematics, data processing, and experimentation.
+Python's simple syntax makes AI code easier to write and understand.
+It has a huge ecosystem of AI libraries such as:
+
+TensorFlow
+PyTorch
+Scikit-learn
+
+Researchers and developers can build prototypes quickly and test ideas faster.
+Interview Answer
+
+Python is popular in AI because its simple syntax, extensive AI libraries, and rapid development capabilities allow developers to focus on building and training AI models rather than dealing with low-level programming complexities.
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+168. Why does Python support multiple paradigms?
+
+Python supports multiple paradigms (procedural, object-oriented, and functional) to provide flexibility and allow developers to choose the most suitable programming style for a given problem. This makes Python versatile, easy to learn, and applicable to a wide variety of domains and project sizes.
+
+What Paradigms Does Python Support?
+
+1. Procedural Programming
+
+Programs are written as a sequence of instructions and functions.
+
+def greet(name):
+    print("Hello", name)
+
+greet("Bhavna")
+
+This style is simple and works well for small programs and scripts.
+
+2. Object-Oriented Programming (OOP)
+
+Programs are organized around objects and classes.
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+    def show(self):
+        print(self.name)
+
+s = Student("Bhavna")
+s.show()
+
+This style is useful for large applications where data and behavior should be grouped together.
+
+3. Functional Programming
+
+Functions are treated as first-class objects.
+
+numbers = [1, 2, 3, 4]
+
+squares = list(map(lambda x: x*x, numbers))
+
+print(squares)
+
+Output:
+
+[1, 4, 9, 16]
+
+Useful for data processing and transformations.
+
+Why Did Python's Creator Choose This?
+
+Guido van Rossum designed Python with the philosophy:
+
+"There should be one—and preferably only one—obvious way to do it."
+
+But he also wanted Python to be practical and flexible.
+
+Different programmers and different projects have different needs.
+
+For example:
+
+A simple automation script → Procedural
+A banking system → OOP
+Data analysis pipeline → Functional features
+
+Python allows all of these.
+
+Real-World Example
+
+Suppose you're building an e-commerce application.
+
+Procedural
+def calculate_tax(price):
+    return price * 0.18
+OOP
+class Product:
+    def __init__(self, price):
+        self.price = price
+Functional
+prices = [100, 200, 300]
+
+taxes = list(map(lambda p: p * 0.18, prices))
+
+All three approaches can coexist in the same project.
+
+Benefits of Supporting Multiple Paradigms
+Flexibility
+
+Choose the best approach for the problem.
+
+Easier Learning
+
+Beginners can start with procedural programming and later learn OOP and functional concepts.
+
+Better Code Organization
+
+Different parts of a project can use different styles where appropriate.
+
+Wider Adoption
+
+Python works well for:
+
+Web development
+Automation
+Data science
+Machine learning
+Scripting
+Scientific computing
+
+---------------------------------------------------
+---------------------------------------------------
+
+169. What happens when a syntax error occurs?
+
+A Syntax Error occurs when Python encounters code that violates the language's grammar rules.
+
+When a syntax error occurs:
+
+1.Python stops parsing the code.
+2.The program does not start executing.
+3.Python displays a SyntaxError message along with the 4.location of the error.
+5.The remaining code is not executed.
+
+Example 1: Missing Colon
+
+if True
+    print("Hello")
+
+Output:
+SyntaxError: expected ':'
+
+Python finds the error while parsing the code, so execution never begins.
+
+Example 2: Missing Closing Parenthesis
+
+print("Hello"
+
+Output:
+SyntaxError: '(' was never closed
+
+Again, the program does not run at all.
+
+Example 3: Incorrect Indentation
+
+if True:
+print("Hello")
+
+Output:
+IndentationError: expected an indented block
+
+IndentationError is a specialized type of syntax error.
+
+Important Difference: Syntax Error vs Exception
+
+Syntax Error
+
+if True
+    print("Hello")
+
+Found before execution starts
+Program cannot run
+
+Exception
+
+print(10 / 0)
+
+Code is syntactically correct
+Error occurs during execution
+
+Output:
+ZeroDivisionError: division by zero
+
+Why Can't try-except Catch a Syntax Error in the Same Code?
+
+try:
+    if True
+        print("Hello")
+except SyntaxError:
+    print("Error")
+
+This won't work because Python must parse the entire file before execution. It encounters the syntax error before reaching the try block.
+
+When a syntax error occurs, Python detects it during the parsing/compilation phase before execution begins. The interpreter stops, reports a SyntaxError (or a related error such as IndentationError), and the program does not run until the error is fixed.
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+170. What happens when an exception is not handled?
+
+If an exception is not handled, Python stops normal program execution, searches for an exception handler, and if none is found, terminates the program and displays a traceback showing the error type and location.
+
+
+When an exception occurs and there is no matching except block to handle it, Python:
+
+1.Stops normal execution of the program.
+2.Searches up the call stack for a handler.
+3.If no handler is found, Python terminates the program.
+4.Displays a traceback showing where the error occurred.
+
+Example 1: Unhandled Exception
+
+num = int(input("Enter a number: "))
+result = 10 / num
+print(result)
+
+Input:
+0
+
+Output:
+
+Traceback (most recent call last):
+  File "main.py", line 2, in <module>
+    result = 10 / num
+ZeroDivisionError: division by zero
+
+Since there is no try-except block, the program crashes.
+
+Example 2: Code After Exception Doesn't Execute
+print("Start")
+
+x = 10 / 0
+print("End")
+
+Output:
+Start
+
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+"End" is never printed because execution stops at the exception.
+
+Example 3: Exception Inside a Function
+
+def divide():
+    return 10 / 0
+divide()
+print("Program Finished")
+
+Output:
+
+Traceback (most recent call last):
+  File ...
+  File ...
+ZeroDivisionError: division by zero
+
+Python first checks divide(), then the caller, then the global scope. Since no handler exists, the program terminates.
+
+Handling the Exception
+
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+print("Program continues")
+
+Output:
+
+Cannot divide by zero
+Program continues
+
+The program does not crash because the exception is handled.
+
+
+--------------------------------------------------
+--------------------------------------------------
+
+171. Why are lists mutable but tuples immutable?
+
+Lists are designed for data that may change, while tuples are designed for data that should remain fixed.
+
+Lists are mutable because they are intended for dynamic data that needs frequent modification. Tuples are immutable because they are intended for fixed data, which provides better safety, lower memory overhead, faster access, and allows tuples to be hashable and used as dictionary keys.
+
+--------------------------------------------------
+--------------------------------------------------
+
+172. Why does input() return string?
+
+input() always returns a string (str) because anything typed from the keyboard is initially treated as text.
+
+Example 1
+x = input("Enter a value: ")
+
+print(x)
+print(type(x))
+
+Input:
+10
+
+Output:
+10
+<class 'str'>
+
+Even though you entered 10, Python stores it as a string.
+
+Why Does Python Do This?
+
+The keyboard sends characters to the program.
+
+When you type:
+10
+
+Python receives:
+'1' and '0'
+
+These are characters, so input() returns them as a string.
+
+Example 2
+age = input("Enter age: ")
+
+print(age + age)
+
+Input:
+25
+
+Output:
+2525
+
+Because Python sees "25" and "25" as strings and performs string concatenation.
+
+Converting to Integer
+
+If you want a number, convert the string:
+
+age = int(input("Enter age: "))
+print(age + age)
+
+Input:
+25
+
+Output:
+50
+
+Now Python performs numeric addition.
+
+Example 3: Float Input
+salary = float(input("Enter salary: "))
+
+print(salary)
+print(type(salary))
+
+Input:
+50000.5
+
+Output:
+50000.5
+<class 'float'>
+
+How input() Works Internally
+
+When you type:
+123
+
+Python roughly does:
+text = read_from_keyboard()
+return str(text)
+
+So the return type is always str.
+
+Using eval() (Less Recommended)
+x = eval(input("Enter value: "))
+print(type(x))
+
+Input:
+10
+
+Output:
+<class 'int'>
+
+Input:
+[1, 2, 3]
+
+Output:
+<class 'list'>
+
+However, eval() can execute arbitrary code and should not be used with untrusted input.
+
+--------------------------------------------------
+--------------------------------------------------
+
+173. What happens when Python starts execution?
+
+When Python starts execution, it reads the source code, tokenizes and parses it, compiles it into bytecode, executes the bytecode using the Python Virtual Machine (PVM), manages memory for objects, and finally cleans up resources when the program ends.
+
+
+Step 1: Python Interpreter Starts
+
+When you execute:
+
+python program.py
+
+the Python Interpreter starts and loads the source code file.
+
+program.py
+     ↓
+Python Interpreter
+Step 2: Source Code is Read
+
+Python reads your .py file line by line.
+
+Example:
+
+x = 10
+y = 20
+print(x + y)
+
+The interpreter first reads the entire source code.
+
+Step 3: Lexical Analysis (Tokenization)
+
+Python breaks the code into tokens.
+
+Example:
+
+x = 10
+
+Tokens:
+
+x
+=
+10
+
+These tokens are the smallest meaningful units of the program.
+
+Step 4: Parsing
+
+Python checks whether the code follows Python syntax rules.
+
+Example:
+
+x = 10
+
+✔ Valid Syntax
+
+Example:
+
+if x > 10
+    print(x)
+
+✖ Missing : → Syntax Error
+
+During parsing, Python creates a structure called an Abstract Syntax Tree (AST).
+
+Step 5: Compilation to Bytecode
+
+Python does not directly execute source code.
+
+It first compiles the code into Bytecode.
+
+Example:
+
+print("Hello")
+
+becomes Python bytecode instructions.
+
+Bytecode is platform-independent.
+
+Step 6: Creation of .pyc File (Optional)
+
+For imported modules, Python may store bytecode in:
+
+__pycache__/
+
+Example:
+
+module.cpython-313.pyc
+
+This helps Python load modules faster next time.
+
+Step 7: Python Virtual Machine (PVM)
+
+The bytecode is sent to the Python Virtual Machine (PVM).
+
+Source Code
+      ↓
+Bytecode
+      ↓
+Python Virtual Machine
+      ↓
+Execution
+
+The PVM executes bytecode instruction by instruction.
+
+Step 8: Memory Allocation
+
+Python creates memory for:
+
+Variables
+Functions
+Objects
+Classes
+
+Example:
+
+a = 100
+
+Python creates an integer object and stores a reference to it.
+
+Step 9: Execution Begins
+
+Statements execute sequentially.
+
+Example:
+
+x = 10
+y = 20
+
+print(x + y)
+
+Execution flow:
+
+x = 10
+↓
+y = 20
+↓
+print(30)
+
+Output:
+30
+
+Step 10: Garbage Collection and Cleanup
+
+When the program finishes:
+
+Local variables are removed.
+Unused objects are cleaned up.
+Memory is released.
+
+Python's Garbage Collector helps reclaim memory.
+
+Complete Flow Diagram
+Run program.py
+       ↓
+Interpreter Starts
+       ↓
+Read Source Code
+       ↓
+Tokenization
+       ↓
+Parsing
+       ↓
+Abstract Syntax Tree (AST)
+       ↓
+Compilation
+       ↓
+Bytecode
+       ↓
+Python Virtual Machine (PVM)
+       ↓
+Execution
+       ↓
+Memory Cleanup
+Example
+
+File:
+
+a = 10
+b = 20
+
+print(a + b)
+
+Internally:
+1. Read source code
+2. Check syntax
+3. Generate AST
+4. Compile to bytecode
+5. Load into PVM
+6. Create objects 10 and 20
+7. Execute print
+8. Display 30
+9. Cleanup memory
+
+Interview Questions
+
+Q1. Does Python execute source code directly?
+
+Answer:
+No. Python first compiles source code into bytecode, then the Python Virtual Machine (PVM) executes that bytecode.
+
+Q2. What is Bytecode?
+
+Answer:
+Bytecode is an intermediate, platform-independent representation of Python code generated before execution.
+
+Q3. What is PVM?
+
+Answer:
+The Python Virtual Machine (PVM) is the component that executes Python bytecode instruction by instruction.
+
+Q4. What is the role of the __pycache__ folder?
+
+Answer:
+It stores compiled bytecode (.pyc files) so modules can load faster in future executions.
+
+-------------------------------------------------
+-------------------------------------------------
+
+174. How does memory management work in Python?
+
+Python memory management works by storing objects in heap memory, tracking them using reference counting, and automatically cleaning up unused or cyclic objects through garbage collection.
+
+Memory management in Python is the process of allocating, using, and releasing memory automatically. Python handles most memory-related tasks for the programmer.
+
+Overview
+
+Python memory management involves:
+
+Memory Allocation
+Reference Counting
+Garbage Collection
+Memory Deallocation
+
+1. Memory Allocation
+
+When you create a variable or object, Python allocates memory for it.
+
+a = 10
+
+Python creates an integer object 10 in memory and a points to it.
+
+name = "Bhavna"
+
+Python allocates memory for the string object "Bhavna".
+
+2. Objects and References
+
+Variables do not store actual values directly.
+
+They store references (addresses) to objects in memory.
+
+a = 100
+b = a
+
+Memory representation:
+
+     a
+      \
+       -> 100
+      /
+     b
+
+Both a and b refer to the same object.
+
+3. Reference Counting
+
+Every object in Python maintains a reference count.
+
+a = [1, 2, 3]
+
+Reference count = 1
+
+b = a
+
+Reference count = 2
+
+c = a
+
+Reference count = 3
+
+Now three variables point to the same list.
+
+Decreasing Reference Count
+del b
+
+Reference count becomes 2.
+
+del c
+
+Reference count becomes 1.
+
+del a
+
+Reference count becomes 0.
+
+Python immediately removes the object from memory.
+
+4. Garbage Collection
+
+Reference counting alone cannot handle circular references.
+
+Example
+x = []
+y = []
+
+x.append(y)
+y.append(x)
+
+Memory:
+
+x --> y
+^     |
+|     v
+<-----
+
+Even if:
+
+del x
+del y
+
+The objects still refer to each other.
+
+Reference counts never become zero.
+
+Python's Garbage Collector detects such unreachable objects and removes them.
+
+
+5. Python Memory Areas
+A. Stack Memory
+
+Stores:
+
+Function calls
+Local variables
+Execution frames
+
+Example:
+
+def add():
+    x = 10
+    y = 20
+
+x and y are managed within the function's execution context.
+
+B. Heap Memory
+
+Stores:
+
+Objects
+Lists
+Tuples
+Dictionaries
+Class instances
+
+Example:
+
+lst = [10, 20, 30]
+
+The list object is stored in the heap.
+
+Example of Stack and Heap
+a = [1, 2, 3]
+Stack                    Heap
+-----                    -----
+a  ------------------>  [1, 2, 3]
+
+The variable a holds a reference, while the actual list is stored in the heap.
+
+Python Memory Manager
+
+Python has a built-in Memory Manager that:
+
+Allocates memory
+Tracks object references
+Frees unused memory
+Works with the Garbage Collector
+
+Programmers usually do not need to manually allocate or free memory.
+
+Checking Object Identity
+a = 100
+b = a
+
+print(id(a))
+print(id(b))
+
+Output:
+
+140...
+140...
+
+Same object, same memory address.
+
+Example: New Object Creation
+a = 10
+a = 20
+
+Python creates a new object for 20.
+
+The reference to 10 is removed.
+
+If no other references exist, 10 becomes eligible for cleanup.
+
+Advantages of Python Memory Management
+
+✅ Automatic memory allocation
+
+✅ Automatic garbage collection
+
+✅ Reduces memory leaks
+
+✅ Simplifies programming
+
+✅ No need for manual malloc() and free() like C
+
+Interview Questions
+Q1. How does Python manage memory?
+
+Answer:
+Python manages memory using:
+
+Automatic memory allocation
+Reference counting
+Garbage collection for circular references
+
+Q2. What is the difference between Stack and Heap memory?
+Stack	                                            Heap
+Stores references and execution frames	            Stores actual objects
+Managed automatically	                            Managed by Python memory manager
+Faster access	                                    Larger storage area
+
+
+Q3. What happens when an object's reference count becomes zero?
+
+Answer:
+Python immediately deallocates the object and frees its memory.
+
+Q4. Why is Garbage Collection needed if Python already uses reference counting?
+
+Answer:
+Reference counting cannot remove circular references. Garbage collection detects and removes unreachable cyclic objects.
+
+Memory Management Flow
+
+Create Object
+      ↓
+Allocate Memory
+      ↓
+Maintain Reference Count
+      ↓
+Reference Count = 0 ?
+      ↓
+     Yes
+      ↓
+Free Memory
+      ↓
+Garbage Collector handles circular references
+
+-------------------------------------------------
+-------------------------------------------------
+
+175. What is garbage collection in Python?
+
+Garbage Collection (GC) is the process by which Python automatically frees memory occupied by objects that are no longer being used.
+
+In simple terms:
+
+Garbage Collection removes unused objects from memory so that memory can be reused by other programs or objects.
+
+Why is Garbage Collection Needed?
+
+When you create objects, they occupy memory.
+
+a = [10, 20, 30]
+
+The list is stored in memory.
+
+If the object is no longer needed, Python should remove it to avoid wasting memory.
+
+Without garbage collection, memory usage would keep increasing.
+
+How Python Manages Memory
+
+Python primarily uses Reference Counting.
+
+Each object keeps track of how many variables are referring to it.
+
+Example
+
+a = [10, 20, 30]
+
+Reference count = 1
+
+b = a
+
+Reference count = 2
+
+Now both a and b refer to the same object.
+
+Removing References
+
+a = [10, 20, 30]
+b = a
+del a
+
+Reference count becomes 1 because b still refers to the object.
+
+del b
+
+Reference count becomes 0.
+
+Now Python automatically destroys the object and releases its memory.
+
+Example
+
+a = [1, 2, 3]
+print(a)
+del a
+
+After del a, the variable no longer exists.
+
+print(a)
+
+Output:
+
+NameError: name 'a' is not defined
+Problem with Reference Counting
+
+Reference counting cannot handle circular references.
+
+Example
+l1 = []
+l2 = []
+
+l1.append(l2)
+l2.append(l1)
+
+Now:
+
+l1 refers to l2
+l2 refers to l1
+
+Even if we delete both variables:
+
+del l1
+del l2
+
+The objects still reference each other internally.
+Reference count never becomes zero.
+This causes a memory leak.
+
+Python's Garbage Collector
+
+To solve circular reference problems, Python provides a Garbage Collector module called gc.
+It can detect unreachable objects involved in circular references and remove them.
+
+import gc
+Checking Garbage Collector Status
+
+import gc
+print(gc.isenabled())
+
+Output:
+True
+
+Manually Running Garbage Collection
+
+import gc
+gc.collect()
+
+This forces Python to perform garbage collection immediately.
+
+Disabling Garbage Collection
+
+import gc
+gc.disable()
+
+Check:
+print(gc.isenabled())
+
+Output:
+False
+
+Enable again:
+
+gc.enable()
+
+Getting Garbage Collection Counts
+
+import gc
+print(gc.get_count())
+
+Example Output:
+(200, 5, 2)
+
+These numbers represent object allocation counts used by Python's garbage collector.
+
+
+Q1. What is Garbage Collection?
+
+Answer:
+Garbage Collection is the automatic process of reclaiming memory occupied by unused objects.
+
+Q2. How does Python perform Garbage Collection?
+
+Answer:
+
+Python uses:
+Reference Counting (primary mechanism)
+Generational Garbage Collection (for circular references)
+
+Q3. Which module is used for Garbage Collection?
+
+Answer:
+
+import gc
+
+Q4. Why is Garbage Collection important?
+
+Answer:
+Prevents memory leaks
+Frees unused memory
+Improves application performance
+Reduces manual memory management
+
+
+-------------------------------------------------
+-------------------------------------------------
+
+176. difference list versus tuple versus set
+
+Difference Between List, Tuple, and Set in Python
+
+Feature	           List	       Tuple	    Set
+Syntax	           []	        ()	    {} or set()
+Ordered	           Yes	        Yes	    No
+Mutable	           Yes	        No	    Yes
+Duplicate Allows   Yes	        Yes	    No
+Indexing           Yes	        Yes	    No
+Slicing	           Yes	        Yes	    No
+Can be Modified    Yes	        No	    Yes
+Memory Usage	   More	        Less	    More
+Hashable	   No	   (if elements     No
+                            immutable)	 
+
+Features: list
+Ordered
+Allows duplicates
+Supports indexing and slicing
+Elements can be added, removed, or modified
+
+Features: tuple
+Ordered
+Allows duplicates
+Supports indexing and slicing
+Cannot be modified after creation
+
+Features: set
+Unordered
+No duplicates
+No indexing
+Mutable
+
+--------------------------------------------------
+--------------------------------------------------
+
+177. what is empty set
+
+An empty set is a set that contains no elements.
+
+A set is a collection of unique, unordered items. When it has zero items, it is called an empty set.
+
+Creating an Empty Set
+
+Use the set() function:
+
+s = set()
+print(s)
+print(type(s))
+
+Output:
+set()
+<class 'set'>
+
+Important Note
+
+Many beginners think this creates an empty set:
+
+s = {}
+print(type(s))
+
+Output:
+<class 'dict'>
+
+❌ {} creates an empty dictionary, not an empty set.
+To create an empty set, always use:
+
+s = set()
+
+Example 1: Adding Elements to an Empty Set
+
+s = set()
+s.add(10)
+s.add(20)
+print(s)
+
+Output:
+{10, 20}
+
+Example 2: Checking Length
+
+s = set()
+print(len(s))
+
+Output:
+0
+Since the set has no elements, its length is 0.
+
+Example 3: Boolean Value of an Empty Set
+
+s = set()
+print(bool(s))
+
+Output:
+False
+An empty set is considered False in a Boolean context.
+
+Example 4: Create an Empty Set and Update It
+
+s = set()
+s.update([1, 2, 3])
+print(s)
+
+Output:
+{1, 2, 3}
+
+Q: Why can't we create an empty set using {}?
+
+Answer:
+Because Python reserves {} for creating an empty dictionary. Therefore, set() must be used to create an empty set.
+
+--------------------------------------------------
+--------------------------------------------------
+
+178. can we use sort() with tuple why or why not.
+
+Answer: ❌ No, we cannot use the sort() method directly with a tuple.
+
+Reason:
+
+A tuple is immutable, which means its elements cannot be modified after creation. The sort() method sorts a collection in place (it changes the original object), so it requires a mutable object like a list.
+
+Example 1: Using sort() on a Tuple
+
+t = (5, 2, 8, 1)
+t.sort()
+
+Output:
+AttributeError: 'tuple' object has no attribute 'sort'
+
+Why this error?
+
+Tuples do not have a sort() method.
+Since tuples are immutable, Python does not allow in-place sorting.
+
+Example 2: Using sorted() with a Tuple
+
+Although sort() doesn't work, you can use the built-in sorted() function.
+
+t = (5, 2, 8, 1)
+result = sorted(t)
+print(result)
+print(type(result))
+
+Output:
+[1, 2, 5, 8]
+<class 'list'>
+
+sorted() works because it creates a new sorted list instead of modifying the tuple.
+
+Example 3: Get a Sorted Tuple
+
+t = (5, 2, 8, 1)
+sorted_tuple = tuple(sorted(t))
+print(sorted_tuple)
+
+Output:
+(1, 2, 5, 8)
+
+Example 4: Descending Order
+
+t = (5, 2, 8, 1)
+result = tuple(sorted(t, reverse=True))
+print(result)
+
+Output:
+(8, 5, 2, 1)
+
+--------------------------------------------------
+--------------------------------------------------
+
+179. what is tuple comprehension?? explain in detail.
+
+Key Point: Python has list, set, and dictionary comprehensions, but no true tuple comprehension. Parentheses with comprehension syntax create a generator expression, and you can convert it to a tuple using tuple().
+
+"Tuple Comprehension"
+
+t = (x*x for x in range(5))
+print(type(t))
+
+Output:
+<class 'generator'>
+
+Why Doesn't Python Support Tuple Comprehension?
+
+Python developers chose:
+
+(x for x in iterable)
+
+to represent a generator expression.
+
+If tuple comprehensions existed, Python wouldn't be able to distinguish between:
+
+(x for x in range(5))
+
+and
+
+(tuple comprehension)
+
+Therefore, parentheses are used for generators.
+
+Example 1: Create a Tuple of Squares
+
+squares = tuple(x*x for x in range(1, 6))
+print(squares)
+
+Output:
+(1, 4, 9, 16, 25)
+
+Example 2: Even Numbers Tuple
+
+even_nums = tuple(x for x in range(10) if x % 2 == 0)
+print(even_nums)
+
+Output:
+(0, 2, 4, 6, 8)
+
+Example 3: Convert Words to Uppercase
+
+words = ["python", "java", "c"]
+result = tuple(word.upper() for word in words)
+print(result)
+
+Output:
+('PYTHON', 'JAVA', 'C')
+
+Example 4: Generator vs Tuple
+
+Generator
+
+g = (x*x for x in range(5))
+print(next(g))
+print(next(g))
+
+Output:
+0
+1
+
+Values are generated one at a time.
+
+Tuple
+
+t = tuple(x*x for x in range(5))
+print(t)
+
+Output:
+(0, 1, 4, 9, 16)
+
+All values are stored immediately.
+
+Memory Advantage of Generators
+
+Generator:
+
+g = (x for x in range(1000000))
+Doesn't store all values.
+Generates values when needed.
+
+Memory efficient.
+
+Tuple:
+
+t = tuple(x for x in range(1000000))
+Stores all one million values.
+Uses much more memory.
+
+Q1. Does Python support tuple comprehension?
+
+Answer:
+No. Python does not have a dedicated tuple comprehension. Expressions like:
+
+(x for x in range(5))
+
+create a generator object, not a tuple.
+
+Q2. How can you create a tuple using comprehension syntax?
+
+Answer:
+
+tuple(x for x in range(5))
+
+--------------------------------------------------
+--------------------------------------------------
+
+180. what is eval()?? explain with proper examples.
+
+eval() is a built-in Python function that evaluates a string as a Python expression and returns the result.
+
+Syntax:
+
+eval(expression)
+expression → A string containing a valid Python expression.
+Returns the result after evaluating the expression.
+
+Example 1: Simple Arithmetic
+result = eval("10 + 20")
+print(result)
+
+Output: 30
+
+Python treats "10 + 20" as actual code and evaluates it.
+
+Example 2: User Input Calculator
+expr = input("Enter expression: ")
+result = eval(expr)
+print("Result:", result)
+
+Input:
+5 * 6
+
+Output:
+Result: 30
+
+Example 3: Mathematical Expressions
+a = 10
+b = 5
+
+result = eval("a + b")
+print(result)
+
+Output:
+15
+eval() can access variables in the current scope.
+
+Example 4: Working with Lists
+lst = eval("[10, 20, 30]")
+print(lst)
+print(type(lst))
+
+Output:
+[10, 20, 30]
+<class 'list'>
+
+Example 5: Working with Tuples
+t = eval("(1, 2, 3)")
+print(t)
+
+Output:
+(1, 2, 3)
+
+Example 6: Working with Dictionaries
+d = eval("{'name':'Bhavna', 'age':25}")
+print(d)
+
+Output:
+{'name': 'Bhavna', 'age': 25}
+
+Why is eval() useful?
+
+Without eval():
+
+x = input("Enter number: ")
+print(type(x))
+
+Input:
+10
+
+Output:
+<class 'str'>
+
+With eval():
+
+x = eval(input("Enter number: "))
+print(type(x))
+
+Input:
+10
+
+Output:
+<class 'int'>
+
+Example 7: Multiple Values Input
+
+Without eval():
+
+a, b = input("Enter two numbers: ").split()
+print(a, b)
+
+Input:
+10 20
+
+Output:
+10 20
+
+(Both are strings)
+
+Using eval():
+
+a, b = eval(input("Enter two numbers: "))
+print(a + b)
+
+Input:
+10, 20
+
+Output:
+30
+
+Important: eval() Can Be Dangerous ⚠️
+
+eval() executes Python code.
+
+eval("__import__('os').system('dir')")
+
+This can run system commands.
+
+If you use eval() on untrusted user input, it can be a security risk.
+
+Safer Alternative: ast.literal_eval()
+from ast import literal_eval
+
+x = literal_eval("[1, 2, 3]")
+print(x)
+
+Output:
+[1, 2, 3]
+
+literal_eval() only evaluates Python literals (numbers, strings, lists, tuples, dictionaries, etc.) and is much safer.
+
+Interview Question
+
+Q: What is the difference between eval() and literal_eval()?
+
+eval()	                           literal_eval()
+Executes any Python expression	Evaluates only literals
+Can execute code	        Cannot execute code
+Security risk	                Safer
+More powerful	                Limited but secure
+
+Use eval() only when you fully trust the input. For converting strings into Python data structures, prefer ast.literal_eval().

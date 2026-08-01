@@ -1,0 +1,1362 @@
+1. What are the key features of Python?
+
+2. Why is Python called an interpreted language?
+
+3. What is the difference between compiled and interpreted languages?
+
+4 What makes Python dynamically typed?
+
+5. Why is Python platform independent?
+
+6. What is the advantage of Python being a high-level language?
+
+7. What are the limitations of Python?
+
+8. How does Python execute a program internally?
+
+9. What is bytecode in Python?
+
+10. What is PVM (Python Virtual Machine)?
+
+11. What is the difference between source code, bytecode, and machine code?
+
+12. Does Python compile code before execution?
+
+13. Where is bytecode stored?
+
+14. Is Python fully interpreted? Explain.
+
+15. What is compilation in Python?
+
+16. What is parsing in Python?
+
+17. What is a parse tree?
+
+18. What is Abstract Syntax Tree (AST)?
+
+19. Difference between parse tree and AST?
+
+20. What role does AST play in Python execution?
+
+21. What is the compilation pipeline in Python?
+
+22. What are the steps from source code to execution in Python?
+
+23. What is lexical analysis in Pyth2on?
+
+24. What is syntax analysis in Python?
+
+25. What happens if there is a syntax error during parsing?
+
+26. What is code object in Python?
+
+27. What is .pyc file in Python?
+
+28. When are .pyc files created?
+
+29. What is the purpose of pycache folder?
+
+30. Does Python recompile code every time? Explain.
+
+31. What are built-in data types in Python?
+
+32. What is the difference between mutable and immutable types?
+
+33. Why are strings immutable?
+
+34.  What is None type in Python?
+
+35.  Can Python store multiple data types in a single variable?
+
+36.  What is type casting in Python?
+
+37.  What is the difference between implicit and explicit conversion?
+  
+38.  Give examples of implicit type conversion.
+
+39.  What happens when you convert float to int?
+
+40.  Can we always convert string to int?
+
+41.  What error occurs if type conversion fails?
+
+
+
+
+
+
+
+
+
+_______________________________________________________
+
+42.  What is the difference between input() and print()?
+
+input() and print() are two basic Python functions, but they do opposite jobs:
+
+input() → takes data from the user
+print() → shows data to the user
+
+🔥 1. input() Function
+
+Used to receive data typed by the user through keyboard.
+
+name = input("Enter your name: ")
+
+Output:
+
+Enter your name:
+
+If user types:
+
+Bhavna
+
+Then:
+
+name = "Bhavna"
+
+Important Point
+
+input() always returns string by default.
+
+age = input("Enter age: ")
+print(type(age))
+
+Output:
+
+<class 'str'>
+
+To use number:
+
+age = int(input("Enter age: "))
+
+🔥 2. print() Function
+
+Used to display output on screen.
+
+print("Hello")
+print(25)
+
+Output:
+
+Hello
+25
+
+🔥 Example Together
+
+name = input("Enter name: ")
+print("Welcome", name)
+
+Output:
+
+Enter name: Bhavna
+Welcome Bhavna
+
+🔥 Return Value Difference
+
+x = input()
+
+Stores entered text.
+
+y = print("Hello")
+print(y)
+
+Output:
+
+Hello
+None
+
+Because print() returns nothing useful.
+
+⚠️ Common Beginner Mistake
+
+age = input("Enter age: ")
+print(age + 5)
+
+Error because age is string.
+
+Correct:
+
+age = int(input("Enter age: "))
+print(age + 5)
+
+📌 Technical Difference
+
+Feature	input()	print()
+Build-in function	yes	yes
+Used for	Taking input	Showing output
+Return value	String	None
+Stops program waiting for user?	Yes	No
+
+
+🎯 Interview Answer
+
+input() is used to take data from the user, while print() is used to display data to the user. input() returns a string value, whereas print() sends output to the screen and returns None.
+
+💎 One-Line Answer
+
+input() reads data, print() displays data.
+_______________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+43.  Why does input() always return a string?
+
+input() always returns a string because it reads text entered by the user from the keyboard. The keyboard provides characters, not numeric or boolean data types. Python receives that raw text and returns it as a string.
+
+✅ Short Answer
+
+When a user types:
+
+25
+
+Python does not automatically know whether you mean:
+
+integer 25
+float 25.0
+string "25"
+ZIP code "25"
+room number "25"
+part of a password "25"
+
+So Python safely returns it as text (str).
+
+🔥 Example
+x = input("Enter value: ")
+print(x)
+print(type(x))
+
+If user enters:
+
+25
+
+Output:
+
+25
+<class 'str'>
+
+🔥 Why Python Chooses String
+1. Keyboard Input Is Text
+
+Keys pressed are characters.
+
+Typing 1, 2, 3 sends character symbols.
+
+So:
+
+123
+
+arrives as text "123".
+
+2. Safer and More Flexible
+
+If Python guessed types automatically, it could create confusion.
+
+Example:
+
+0012
+
+Should it become:
+
+integer 12 (leading zeros lost)
+string "0012" (keeps exact input)
+
+Python chooses string to preserve what user typed.
+
+3. User May Enter Names / Emails / Codes
+
+Examples:
+
+Bhavna
+A102
+98.6
+yes
+
+All can be accepted consistently as strings first.
+
+🔥 Then How to Get Numbers?
+
+You convert explicitly using type casting.
+
+Integer
+age = int(input("Enter age: "))
+Float
+price = float(input("Enter price: "))
+
+🔥 Example
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print(a + b)
+
+If user enters 5 and 7
+
+Output:
+
+12
+
+⚠️ Common Beginner Mistake
+
+a = input("Enter: ")
+b = input("Enter: ")
+print(a + b)
+
+If user enters 5 and 7
+
+Output:
+
+57
+
+Because strings concatenate.
+
+Correct:
+
+print(int(a) + int(b))
+
+🔥 Internal Reason
+
+input() reads a line from standard input (stdin) and returns the line as a string after removing the trailing newline.
+
+🎯 Interview Answer
+
+input() always returns a string because keyboard input is received as text. Python does not automatically infer numeric or other data types, so it returns the raw user input as a string for safety and consistency.
+_______________________________________________________
+
+
+
+
+
+
+
+44.  How can you take integer input from the user?
+
+You can take integer input from the user in Python by using input() together with int().
+
+Since input() always returns a string, we convert that string into an integer using int().
+
+✅ Basic Syntax
+num = int(input("Enter a number: "))
+How it works:
+input() takes user input as text
+int() converts text to integer
+Value is stored in num
+🔥 Example
+age = int(input("Enter your age: "))
+print(age)
+print(type(age))
+
+If user enters:
+
+25
+
+Output:
+
+25
+<class 'int'>
+🔥 Without int()
+age = input("Enter age: ")
+print(type(age))
+
+Output:
+
+<class 'str'>
+
+So conversion is necessary for numbers.
+
+✅ Taking Two Integer Inputs
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print("Sum =", a + b)
+✅ Taking Multiple Integers in One Line
+a, b = map(int, input("Enter two numbers: ").split())
+print(a + b)
+
+If user enters:
+
+10 20
+
+Output:
+
+30
+⚠️ Important Note
+
+If user enters non-numeric text:
+
+abc
+
+Then:
+
+int(input())
+
+will give:
+
+ValueError
+
+📌 Interview Answer
+
+To take integer input in Python, use int(input()). The input() function reads data as a string, and int() converts it into an integer.
+
+💎 One-Line Answer
+num = int(input("Enter number: "))
+
+______________________________________________________
+
+
+
+
+
+
+
+
+
+45.  What are sep and end parameters in print()?
+In Python, sep and end are optional parameters of the print() function used to control how output is displayed.
+
+They are very useful for formatting output neatly.
+
+✅ Syntax
+print(*objects, sep=' ', end='\n')
+
+Default values:
+
+sep=' ' → space between multiple items
+end='\n' → newline after printing
+🔥 1. sep Parameter
+
+sep means separator.
+
+It controls what is printed between multiple values.
+
+Default Separator = space
+print("Ram", 25, "Bhopal")
+
+Output:
+
+Ram 25 Bhopal
+
+Python automatically puts a space.
+
+Example: Custom Separator
+print("Ram", 25, "Bhopal", sep="-")
+
+Output:
+
+Ram-25-Bhopal
+More Examples
+print("2026", "04", "18", sep="/")
+
+Output:
+
+2026/04/18
+print("A", "B", "C", sep=" | ")
+
+Output:
+
+A | B | C
+🔥 2. end Parameter
+
+end means what to print after the output finishes.
+
+Default = newline (\n)
+print("Hello")
+print("World")
+
+Output:
+
+Hello
+World
+
+Because after first print, cursor moves to next line.
+
+Example: Same Line Output
+print("Hello", end=" ")
+print("World")
+
+Output:
+
+Hello World
+Example: Use Symbol
+print("Python", end="!")
+
+Output:
+
+Python!
+🔥 Using Both Together
+print("A", "B", "C", sep="-", end=" DONE")
+
+Output:
+
+A-B-C DONE
+📌 Real-Life Example
+Printing Numbers in One Line
+for i in range(1, 6):
+    print(i, end=" ")
+
+Output:
+
+1 2 3 4 5
+
+Common Mistake
+
+print("A", "B", end="-")
+print("C")
+
+Output:
+
+A B-C
+
+Because first line did not move to next line.
+
+🎯 Interview Answer
+
+sep and end are optional parameters of Python’s print() function. sep specifies the separator between multiple printed values, while end specifies what should be printed after the output. Their default values are space and newline respectively.
+
+💎 One-Line Answer
+
+sep controls spacing between items, end controls what comes after printing.
+_____________________________________________________
+  
+
+
+
+
+
+
+46.  How can you take multiple inputs in one line?
+_____________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+47.  How do you format output in Python?
+
+Python provides several ways to format output, meaning you can control how text, numbers, variables, alignment, decimal places, spacing, etc. appear when printed.
+
+Formatting output is mainly done with:
+
+print() basics
+f-strings (recommended)
+str.format()
+% formatting (older style)
+Width / alignment / precision controls
+
+
+✅ 1. Basic Output with print()
+
+name = "Bhavna"
+age = 25
+
+print(name, age)
+
+Output:
+
+Bhavna 25
+
+By default, print() separates values with a space.
+
+✅ 2. f-Strings (Best Modern Method)
+
+Available in Python 3.6+
+
+name = "Bhavna"
+age = 25
+
+print(f"My name is {name} and I am {age} years old.")
+
+Output:
+
+My name is Bhavna and I am 25 years old.
+
+Why best?
+
+Easy to read
+Fast
+Powerful
+Supports expressions
+x = 5
+y = 3
+print(f"Sum = {x + y}")
+
+Output:
+
+Sum = 8
+
+✅ 3. Decimal Formatting
+
+pi = 3.1415926
+print(f"{pi:.2f}")
+
+Output:
+
+3.14
+
+Meaning:
+
+.2f = float with 2 digits after decimal
+
+More examples:
+
+price = 99.5
+print(f"{price:.1f}")   # 99.5
+print(f"{price:.2f}")   # 99.50
+
+✅ 4. Width and Alignment
+
+name = "Ram"
+
+print(f"{name:<10}Done")   # left align
+print(f"{name:>10}Done")   # right align
+print(f"{name:^10}Done")   # center
+
+Output:
+
+Ram       Done
+       RamDone
+   Ram    Done
+
+✅ 5. str.format() Method
+
+Older but still common.
+
+name = "Bhavna"
+score = 95
+
+print("Name: {}, Score: {}".format(name, score))
+
+Output:
+
+Name: Bhavna, Score: 95
+
+Named placeholders:
+
+print("Name: {n}, Score: {s}".format(n="Bhavna", s=95))
+
+✅ 6. % Formatting (Old Style)
+
+name = "Bhavna"
+age = 25
+
+print("My name is %s and age is %d" % (name, age))
+
+Output:
+
+My name is Bhavna and age is 25
+
+Used in older codebases.
+
+✅ 7. Formatting Numbers with Commas
+
+num = 1234567
+print(f"{num:,}")
+
+Output:
+
+1,234,567
+
+✅ 8. Percentage Output
+
+value = 0.8567
+print(f"{value:.2%}")
+
+Output:
+
+85.67%
+
+✅ 9. Using sep and end in print()
+
+print("A", "B", "C", sep="-")
+print("Hello", end=" ")
+print("World")
+
+Output:
+
+A-B-C
+Hello World
+
+
+📌 Comparison Table
+
+Method	Example	Status
+f-string	f"{x}	Best/Modern
+format()	"{}".format(x)	Good
+% style	"%d" % x	old
+print() basic	print(x)	Simple
+
+
+
+
+
+
+48.  What is the difference between / and // ?
+
+49.  What is the use of % operator?
+
+50.  What is the use of ** operator?
+_______________________________________________
+
+
+
+
+
+
+
+
+
+
+
+51.  Why is ^ not used as a power operator in Python?
+
+^ is not used as a power operator in Python because Python follows mathematical/programming conventions where ^ is reserved for the bitwise XOR operator, and exponentiation is represented by **.
+
+✅ Short Answer
+
+In Python:
+
+2 ** 3   # power → 8
+2 ^ 3    # bitwise XOR → 1
+
+So ^ already has a different meaning.
+
+🔥 Why Python Uses ** for Power
+
+Python inherited many design ideas from languages like Fortran and others that used ** for exponentiation.
+
+Example:
+
+5 ** 2   # 25
+10 ** 3  # 1000
+
+This makes exponentiation explicit and avoids conflict with bitwise operators.
+
+🔥 Why ^ Means XOR
+
+In many programming languages (C, C++, Java, etc.), ^ is commonly used for exclusive OR (XOR) at the bit level.
+
+Python kept that convention for consistency.
+
+Example:
+
+5 ^ 3
+
+Binary:
+
+5 = 101
+3 = 011
+-----------
+XOR = 110 = 6
+
+Output:
+
+6
+⚠️ Common Beginner Mistake
+
+Many users from math backgrounds assume:
+
+2 ^ 3
+
+means 2
+3
+=8
+
+But in Python it gives:
+
+1
+
+Because:
+
+2 = 10
+3 = 11
+XOR = 01 = 1
+
+Correct power syntax:
+
+2 ** 3
+🔥 Why Not Change It?
+
+Changing ^ to power would create major problems:
+
+Break existing Python code using XOR
+Lose consistency with other languages
+Ambiguity in bitwise operations
+
+So Python keeps:
+
+^ → XOR
+** → exponentiation
+
+^ is not used as the power operator in Python because it is reserved for bitwise XOR, following common programming language conventions. Python uses ** for exponentiation to avoid ambiguity and maintain consistency.
+________________________________________________
+
+52.  What are assignment operators in Python?
+_______________________________________________
+
+53.  What is the difference between = and == ?
+
+= and == are very different operators in Python.
+
+= is the assignment operator
+== is the equality (comparison) operator
+✅ 1. = Assignment Operator
+
+Used to assign/store a value in a variable.
+
+x = 10
+name = "Bhavna"
+
+Meaning:
+
+x gets value 10
+name gets value "Bhavna"
+
+It does not compare anything.
+
+✅ 2. == Equality Operator
+
+Used to compare two values.
+
+It checks whether both sides are equal and returns:
+
+True
+False
+x = 10
+print(x == 10)
+
+Output:
+
+True
+🔥 Simple Examples  Assignment
+a = 5
+
+Stores 5 in a
+
+Comparison
+a == 5
+
+Checks if a equals 5
+
+Common Beginner Mistake
+
+Wrong:
+
+if x = 5:
+
+This gives SyntaxError in Python.
+
+Correct:
+
+if x == 5:
+
+Because inside conditions we compare, not assign.
+
+🔥 Memory Understanding
+
+x = 10
+
+Means variable x refers to object 10
+
+x == 10
+
+Means compare x value with 10
+________________________________________________________
+
+54.  What does += operator do internally?
+  
+55.  What is the output of 5 > 3 > 1 ?
+________________________________________________________
+
+56.  Can relational operators be chained in Python?
+
+Yes — relational operators can be chained in Python, and this is one of Python’s elegant features.
+
+Python allows expressions like:
+
+a < b < c
+x == y != z
+10 < age <= 60
+
+These are valid and commonly used.
+
+✅ What Are Relational Operators?
+
+Relational (comparison) operators compare values:
+
+< less than
+> greater than
+<= less than or equal to
+>= greater than or equal to
+== equal to
+!= not equal to
+
+🔥 What Does Chaining Mean?
+
+Instead of writing:
+
+a < b and b < c
+
+You can write:
+
+a < b < c
+
+Both mean the same logical result.
+
+✅ Example 1
+x = 5
+print(1 < x < 10)
+
+Output:
+
+True
+
+Because:
+
+1 < 5 → True
+5 < 10 → True
+
+So final result = True
+
+✅ Example 2
+age = 25
+print(18 <= age <= 60)
+
+Output:
+
+True
+
+Very useful for range checking.
+
+🔥 How Python Evaluates It
+a < b < c
+
+Python interprets as:
+
+(a < b) and (b < c)
+
+But with an advantage:
+
+✅ b is evaluated only once.
+
+✅ Example 3
+print(5 < 10 > 7)
+
+Output:
+
+True
+
+Because:
+
+5 < 10 True
+10 > 7 True
+
+⚠️ Important Note
+
+This does not mean comparing first and last directly.
+
+5 < 10 > 100
+
+Checks:
+
+5 < 10 True
+10 > 100 False
+
+Result:
+
+False
+
+It does not check 5 < 100.
+
+❌ Wrong Assumption Example
+a = 2
+b = 3
+c = 1
+
+print(a < b > c)
+
+Output:
+
+True
+
+Because:
+
+2 < 3 True
+3 > 1 True
+
+Even though 2 < 1 is False (not checked).
+
+🔥 Mixed Chaining Allowed
+x = 5
+print(1 < x != 10)
+
+Checks:
+
+1 < 5
+5 != 10
+
+Result: True
+
+🚫 Avoid Confusing Chains
+
+Technically valid:
+
+a == b < c
+
+But not always readable.
+
+Better:
+
+a == b and b < c
+
+🎯 Practical Uses
+
+Range Validation
+marks = 72
+if 0 <= marks <= 100:
+    print("Valid")
+Age Check
+if 18 <= age < 60:
+    print("Eligible")
+
+🔥 Interview Answer
+
+Yes, Python supports chaining of relational operators. For example, a < b < c is valid and equivalent to a < b and b < c. It improves readability and is commonly used for range comparisons.
+
+________________________________________________________
+
+57.  What is a variable in Python?
+
+________________________________________________________
+
+58.  Why is there no need to declare variable type in Python?
+
+There is no need to declare variable type in Python because Python is a dynamically typed language.
+
+That means Python automatically detects the data type of the value when you assign it to a variable.
+
+In Python, you simply write:
+
+age = 25
+name = "Bhavna"
+
+Python itself understands:
+
+25 → int
+"Bhavna" → str
+
+Why Python Works This Way
+
+1. Type Belongs to Object, Not Variable
+
+In Python:
+
+Variable is only a name/reference
+Actual value object has the type
+
+Example:
+
+x = 10
+
+Means:
+
+x refers to object 10
+object 10 has type int
+
+Then:
+
+x = "Hello"
+
+Now:
+
+x refers to string object
+type becomes str
+
+So Python does not need:
+
+int x;
+
+because x itself has no fixed type.
+
+🔥 Python Automatically Infers Type
+
+When you write:
+
+a = 5
+b = 3.14
+c = "Hi"
+d = True
+
+Python internally understands:
+
+a is int
+b is float
+c is str
+d is bool
+
+Use:
+
+print(type(a))
+print(type(b))
+
+✅ Benefits of No Type Declaration
+1. Easy to Write
+
+Less code:
+
+x = 10
+
+instead of:
+
+int x = 10;
+2. Faster Development
+
+You focus on logic instead of type syntax.
+
+3. Flexible Code
+
+Same variable can hold different values:
+
+x = 10
+x = "Ten"
+x = [10]
+4. Great for Beginners
+
+Simple syntax makes Python beginner-friendly.
+
+⚠️ Any Drawbacks?
+
+Yes.
+
+Because type is checked at runtime, mistakes may appear later:
+
+x = "5"
+print(x + 2)
+
+Error:
+
+TypeError
+
+Static languages may catch earlier.
+
+🔥 Internal Reason
+
+Python uses dynamic memory + runtime object system.
+
+Each object stores:
+
+value
+type
+reference count
+
+Variable names simply point to objects.
+_________________________________________________________
+ 
+59.  Can we change the data type of a variable dynamically?
+
+yes, Python allows changing the data type of a variable dynamically because Python is dynamically typed. Variables are references to objects, not fixed typed containers. Therefore, the same variable can refer to an int, string, float, list, etc. during runtime.
+
+x = 10        # int
+x = "Hello"   # str
+x = 3.14      # float
+
+This is completely valid in Python.
+
+Why Is This Possible?
+
+Because in Python:
+
+Variables do not store fixed data types.
+Variables store references to objects.
+Every object has its own type.
+
+So:
+
+x = 10
+
+means:
+
+variable x refers to integer object 10
+
+Then:
+
+x = "Hello"
+
+means:
+
+now x refers to string object "Hello"
+
+The old object is no longer connected to x.
+
+🧠 Example with Type Checking
+x = 5
+print(type(x))
+
+Output:
+
+<class 'int'>
+
+Now:
+
+x = "Python"
+print(type(x))
+
+Output:
+
+<class 'str'>
+
+This Is Called Dynamic Typing
+
+Python decides the type during execution, not before.
+
+________________________________________________________
+
+60.  What is multiple assignment in Python?
+
+Multiple assignment in Python means assigning values to more than one variable in a single statement.
+
+Example 1: Assign different values
+a, b, c = 10, 20, 30
+print(a)   # 10
+print(b)   # 20
+print(c)   # 30
+
+Example 2: Assign same value to multiple variables
+x = y = z = 5
+print(x, y, z)   # 5 5 5
+
+Example 3: Swap values
+a, b = 10, 20
+a, b = b, a
+print(a, b)   # 20 10
+
+Advantages:
+Saves time
+Shorter code
+Easy swapping of variables
+
+Using with Input
+x, y = input("Enter two numbers: ").split()
+
+Input:
+
+10 20
+
+Then:
+
+x = "10"
+y = "20"
+
+With integer:
+
+x, y = map(int, input().split())
+________________________________________________________
+
+61.  How can you swap two variables without using a third variable? 
+
+62.  What are identifiers in Python?
+
+63.  What are the rules for naming identifiers?
+
+64.  Can an identifier start with a number?
+________________________________________________________
+
+
+65.  What is the difference between identifier and keyword?
+
+Identifiers are names used for variables, functions, classes, etc., whereas keywords are reserved words that have special meaning in Python syntax and cannot be used as names.
+Basis	Identifiers	Keyword
+meaning	Name give to variables, functions, classes, etc	Reserved word with special meaning in Python
+purpose	Used to identify user-defined items	Used to define syntax/rules
+can we create our own?    	yes	no
+can be changed?	yes	no
+          
+Example:	name, total_marks, myFunc	if, else, for, while, class
+age = 25      # age is identifier
+
+if age > 18:  # if is keyword
+    print("Adult")
+
+_______________________________________________________
+66.  Is Python case-sensitive for identifiers?
+
+ans: Yes, Python is case-sensitive for identifiers.
+
+That means uppercase and lowercase letters are treated as different names.
+
+Example:
+name = "Bhavna"
+Name = "Riya"
+
+print(name)   # Bhavna
+print(Name)   # Riya
+
+Here, name and Name are two different identifiers.
+
+Identifiers include:
+Variable names
+Function names
+Class names
+Module names
+_________________________________________________________
+
+67.  Who developed Python?
+
+68.  When was Python first released?
+
+69.  Why was Python created?
+ 
+70.  Why is Python named “Python”?
+
+71.  What are the major versions of Python?
+
+_________________________________________________________
+72.  Why was Python 2 discontinued?
+ans:
+
+ Main reasons Python 2 was discontinued:
+Old Design Issues
+Python 2 was created in the 1990s. Some features became outdated over time.
+Unicode Support Problems
+Python 2 had weak handling of international text/languages. Python 3 fixed this.
+Cleaner Syntax in Python 3
+Example:
+
+Python 2:
+print "Hello"
+
+Python 3:
+print("Hello")
+
+Better Future Development
+Maintaining both Python 2 and Python 3 was difficult. Developers wanted to focus on one version.
+Improved Libraries & Performance
+New libraries and updates were mainly built for Python 3.
+Official End of Life:
+
+Python 2 officially reached end-of-life on January 1, 2020, meaning no more updates, bug fixes, or security patches.
+_________________________________________________________
+
+
+73.  What is the output of: print(True + True)
+
+74.  What is the output of: print(10 and 0 or 5)
+
+75.  What is the output of: print(5 > 3 > 2)
+
+76.  What is the output of: print(bool(""))
+
+77.  What is the output of: print(10 / 3)
+
+78.  What is the output of: print(10 // 3)
